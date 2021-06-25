@@ -21,7 +21,7 @@ cache_data <- TRUE
 # Knit the HTML version
 rmarkdown::render("sayalaruano_cv.Rmd",
                   params = list(pdf_mode = FALSE, cache_data = cache_data),
-                  output_file = "sayalaruano_cv.html")
+                  output_file = "index.html")
 
 
 # Knit the PDF version to temporary html location

@@ -9,7 +9,7 @@ The main files are:
 
 - `sayalaruano_cv.Rmd`: Source template for the cv.
 - `render_cv.R`: R script for rendering both pdf and html version of CV at the same time (From `nstrayer/cv`.)
-	- `sayalaruano_cv.html`: Final output of CV in html format.  
+	- `index.html`: Final output of CV in html format.  
 	- `sayalaruano_cv.pdf`: Final output of CV in pdf format.  
 - `CV_printing_functions.R`: Auxiliar funtion of `render_cv.R` function. (From `nstrayer/cv`.)
 - `css/`: Directory containing the custom CSS files to add styles (From `nstrayer/cv`.)
