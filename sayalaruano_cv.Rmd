@@ -51,10 +51,6 @@ PDF_EXPORT <- FALSE
 CV_PDF_LOC <- "http://sayalaruano.github.io/cv/sayalaruano_cv.pdf"
 CV_HTML_LOC <- "[sayalaruano.github.io/cv](http://sayalaruano.github.io/cv)"
 
-# A global (gasp) variable that holds all the links that were inserted for
-# placement at the end
-links <- c()
-
 # ======================================================================
 # Now we source two external scripts. One contains functions for building the
 # text output and the other loads up our data from either googlesheets or csvs
@@ -110,11 +106,11 @@ Last updated on `r Sys.Date()`.
 
 ```{r 'fix_dots_pdf_2'}
 # When in export mode the little dots are unaligned, so fix that. 
-if(PDF_EXPORT){
+#if(PDF_EXPORT){
   glue("View this CV online at {CV_HTML_LOC}")
-} else {
-  glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
-}
+#} else {
+ # glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
+#}
 ```
 
 Main
