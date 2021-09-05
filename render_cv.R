@@ -19,9 +19,9 @@ readr::write_rds(cv_data, 'cached_positions.rds')
 cache_data <- TRUE
 
 # Knit the HTML version
-#rmarkdown::render("sayalaruano_cv.Rmd",
- #                 params = list(pdf_mode = FALSE, cache_data = cache_data),
-  #                output_file = "index.html")
+rmarkdown::render("sayalaruano_cv.Rmd",
+                  params = list(pdf_mode = FALSE, cache_data = cache_data),
+                  output_file = "index.html")
 
 
 # Knit the PDF version to temporary html location
