@@ -27,7 +27,7 @@ rmarkdown::render("sayalaruano_cv.Rmd",
 # Knit the PDF version to temporary html location
 tmp_html_cv_loc <- fs::file_temp(ext = ".html")
 rmarkdown::render("sayalaruano_cv.Rmd",
-                  params = list(pdf_mode = FALSE, cache_data = cache_data),
+                  params = list(pdf_mode = TRUE, cache_data = cache_data),
                   output_file = tmp_html_cv_loc)
 
 # Convert to PDF using Pagedown
