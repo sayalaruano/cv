@@ -5,7 +5,7 @@ View at [sayalaruano.github.io/cv](https://sayalaruano.github.io/).
 
 ## Structure 
 
-The main files are:
+The main files and directories are:
 
 - `sayalaruano_cv.Rmd`: Source template for the cv.
 - `render_cv.R`: R script for rendering both pdf and html version of CV at the same time (From `nstrayer/cv`.)
