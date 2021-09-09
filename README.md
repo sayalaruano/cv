@@ -1,7 +1,7 @@
-Sebastián Ayala-Ruano [pagedown](https://pagedown.rbind.io) rendered CV
+CV made with [pagedown](https://pagedown.rbind.io) R package
 ================
 
-View at [sayalaruano.github.io/cv](http://sayalaruano.github.io/cv).
+View at [sayalaruano.github.io/cv](https://sayalaruano.github.io/).
 
 ## Structure 
 
