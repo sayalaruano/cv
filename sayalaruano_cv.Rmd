@@ -76,24 +76,57 @@ contact_info %>%
   glue_data("- <i class='{iconpack} fa-{icon}'></i> {contact}")
 ```
 
+<p align="center">
+  <a href="https://www.twitter.com/sayalaruano/" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png" alt="https://www.twitter.com/sayalaruano/" height="25" width="25" /></a>
+  <a href="https://github.com/sayalaruano" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="https://www.twitter.com/sayalaruano/" height="25" width="25" /></a>
+  <a href="https://www.linkedin.com/in/sayalaruano" target="blank"><img align="center" src="https://img.icons8.com/material-outlined/24/000000/linkedin--v2.png" alt="https://www.linkedin.com/in/sayalaruano" height="25" width="25" /></a>
+  <a href="https://orcid.org/0000-0001-9756-6745" target="blank">
+    <img align="center" src="https://img.icons8.com/windows/64/000000/orcid.png" alt="https://orcid.org/0000-0001-9756-6745" height="25" width="25" /></a>
+  <a href="https://www.researchgate.net/profile/Sebastian-Ayala-Ruano" target="blank">
+    <img align="center" src="https://img.icons8.com/windows/64/000000/researchgate.png" alt="https://www.researchgate.net/profile/Sebastian-Ayala-Ruano" height="25" width="25" /></a> 
+  <a href="https://scholar.google.com/citations?user=QbDzPWMAAAAJ&hl=en&oi=ao" target="blank">
+    <img align="center" src="https://img.icons8.com/material-outlined/24/000000/google-scholar.png" alt="https://scholar.google.com/citations?user=QbDzPWMAAAAJ&hl=en&oi=ao" height="25" width="25" /></a> 
+</p>
+
 Skills {#skills}
 --------------------------------------------------------------------------------
-<i class="fa fa-laptop"></i> **Programming:**
+<i class="fa fa-laptop"></i> **Technical**
 
--   R and R Markdown
--   Python 
--   Bash
--   SQL
--   C++
--   Java 
--   Git/GitHub
+Languages: 
+<table>
+    <td><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original-wordmark.svg" alt="Python" width="30" height="30"/> </td>
+    <td><img src="https://www.vectorlogo.zone/logos/r-project/r-project-official.svg" alt="R" width="30" height="30"/> </td>
+    <td><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-official.svg" alt="bash" width="45" height="30"/> </td>
+    <td><img src="https://github.com/devicons/devicon/raw/master/icons/cplusplus/cplusplus-original.svg" alt="c++" width="30" height="30"/> </td>
+    <td><img src="https://github.com/devicons/devicon/raw/master/icons/java/java-original-wordmark.svg" alt="java" width="30" height="30"/></td>
+</table>
+<br>
+DevOps:
+<table>
+     <td><img src="https://github.com/devicons/devicon/raw/master/icons/github/github-original-wordmark.svg" alt="github" width="30" height="30"/></td>
+     <td><img src="https://github.com/devicons/devicon/raw/master/icons/git/git-original-wordmark.svg" alt="git" width="30" height="30"/></td>
+     <td><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="30" height="30"/></td>
+</table>
+<br>
+Data Science: 
+<table>
+    <td><img src="https://github.com/devicons/devicon/raw/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" width="30" height="30"/></td>
+    <td><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original-wordmark.svg" alt="Python" width="30" height="30"/> </td>
+    <td><img src="https://www.vectorlogo.zone/logos/r-project/r-project-official.svg" alt="R" width="30" height="30"/> </td>
+</table>
+<br>
+Databases and Cloud:
+<table>
+     <td><img src="https://github.com/devicons/devicon/raw/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="30" height="30"/></td>
+     <td><img src="https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg" alt="firebase" width="45" height="30"/> </td>
+     <td><img src="https://github.com/devicons/devicon/raw/master/icons/heroku/heroku-original-wordmark.svg" alt="heroku" width="30" height="30"/> </td>
+</table>
 
-<i class="fa fa-language" aria-hidden="true"></i> **Languages:**
+<i class="fa fa-language" aria-hidden="true"></i> **Languages**
 
--   Spanish (Native)
--   English (Advanced)
--   German (Basic) 
--   Korean (Basic)
+- Spanish: Native
+- English: Advanced
+- Korean: Basic
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
@@ -107,11 +140,11 @@ Last updated on `r Sys.Date()`.
 ```{r 'fix_dots_pdf_2'}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
-  #glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
-  glue("View this CV online at {CV_HTML_LOC}")
-} else {
   glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
   #glue("View this CV online at {CV_HTML_LOC}")
+} else {
+  #glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
+  glue("View this CV online at {CV_HTML_LOC}")
 }
 ```
 
