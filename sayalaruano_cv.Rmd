@@ -36,7 +36,7 @@ library(tidyverse)
 using_googlesheets <- TRUE
 
 # Just the copied URL from the sheet
-positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1Q1isK1VML7aTbNm-wtekRvUK6bS6l9Tewc-4yvtLgz0"
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1Q1isK1VML7aTbNm-wtekRvUK6bS6l9Tewc-4yvtLgz0/edit#gid=0"
 
 # Is this sheet available for anyone to read? If you're using a private sheet
 # set this to false and go to gather_data.R and run the data loading manually
@@ -158,7 +158,7 @@ Sebastián Ayala-Ruano {#title}
 print_text_block(text_blocks, 'intro')
 ```
 
-Education {#education data-icon=graduation-cap data-concise=true} 
+Education {#education data-icon=graduation-cap} 
 --------------------------------------------------------------------------------
 
 ```{r 'education'}
@@ -204,10 +204,19 @@ print_section(position_data, 'honors')
 ```
 
 
-Leadership and Service {#leadership data-icon=book}
+Leadership and Service {#leadership data-icon=users}
 --------------------------------------------------------------------------------
 
 ```{r 'service'}
 print_section(position_data, 'service')
+```
+
+
+{#others}
+--------------------------------------------------------------------------------
+
+
+```{r 'others'}
+print_text_block(text_blocks, 'others')
 ```
 

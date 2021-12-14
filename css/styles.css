@@ -72,6 +72,11 @@ h4 {
     line-height: 1;
 }
 
+[data-id="others"] {
+    margin: 0 0.5in 0.2in 0.5in;
+    --decorator-border: 0px;
+}
+
 /* When we have links at bottom in a list make sure they actually are numbered */
 #links li {
   list-style-type: decimal;
