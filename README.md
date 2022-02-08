@@ -1,7 +1,7 @@
 CV made with [pagedown](https://pagedown.rbind.io) R package
 ================
 
-View at [sayalaruano.github.io/cv](https://sayalaruano.github.io/).
+View at [sayalaruano.github.io/cv](https://sayalaruano.github.io/cv/).
 
 ## Structure 
 
