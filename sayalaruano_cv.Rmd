@@ -36,7 +36,7 @@ library(tidyverse)
 using_googlesheets <- TRUE
 
 # Just the copied URL from the sheet
-positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1Q1isK1VML7aTbNm-wtekRvUK6bS6l9Tewc-4yvtLgz0/edit#gid=0"
+positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1Uhd5RMbR37AdY7nFWSqYskN5EIG04QqSA3XG49nHPQM/edit?usp=sharing"
 
 # Is this sheet available for anyone to read? If you're using a private sheet
 # set this to false and go to gather_data.R and run the data loading manually
@@ -77,22 +77,22 @@ contact_info %>%
 ```
 
 <p align="center">
-  <a href="https://www.twitter.com/sayalaruano/" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/000000/twitter--v1.png" alt="https://www.twitter.com/sayalaruano/" height="25" width="25" /></a>
-  <a href="https://github.com/sayalaruano" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/000000/github.png" alt="https://www.twitter.com/sayalaruano/" height="25" width="25" /></a>
-  <a href="https://www.linkedin.com/in/sayalaruano" target="blank"><img align="center" src="https://img.icons8.com/material-outlined/24/000000/linkedin--v2.png" alt="https://www.linkedin.com/in/sayalaruano" height="25" width="25" /></a>
+  <a href="https://www.twitter.com/sayalaruano/" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/095a95/twitter--v1.png" alt="Twitter" height="25" width="25"/></a>
+  <a href="https://github.com/sayalaruano" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/095a95/github.png" alt="GitHub" height="25" width="25" /></a>
+  <a href="https://www.linkedin.com/in/sayalaruano" target="blank"><img align="center" src="https://img.icons8.com/material-outlined/24/095a95/linkedin--v2.png" alt="LinkedIn" height="25" width="25" /></a>
   <a href="https://orcid.org/0000-0001-9756-6745" target="blank">
-    <img align="center" src="https://img.icons8.com/windows/64/000000/orcid.png" alt="https://orcid.org/0000-0001-9756-6745" height="25" width="25" /></a>
+    <img align="center" src="https://img.icons8.com/windows/64/095a95/orcid.png" alt="orCID" height="25" width="25" /></a>
   <a href="https://www.researchgate.net/profile/Sebastian-Ayala-Ruano" target="blank">
-    <img align="center" src="https://img.icons8.com/windows/64/000000/researchgate.png" alt="https://www.researchgate.net/profile/Sebastian-Ayala-Ruano" height="25" width="25" /></a> 
+    <img align="center" src="https://img.icons8.com/windows/64/095a95/researchgate.png" alt="Researchgate" height="25" width="25" /></a> 
   <a href="https://scholar.google.com/citations?user=QbDzPWMAAAAJ&hl=en&oi=ao" target="blank">
-    <img align="center" src="https://img.icons8.com/material-outlined/24/000000/google-scholar.png" alt="https://scholar.google.com/citations?user=QbDzPWMAAAAJ&hl=en&oi=ao" height="25" width="25" /></a> 
+    <img align="center" src="https://img.icons8.com/ios-filled/50/095a95/google-scholar--v2.png" alt="Google schoolar" height="25" width="25" /></a> 
 </p>
 
 Skills {#skills}
 --------------------------------------------------------------------------------
 <i class="fa fa-laptop"></i> **Technical**
 
-Languages: 
+Programming Languages:
 <table>
     <td><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original-wordmark.svg" alt="Python" width="30" height="30"/> </td>
     <td><img src="https://www.vectorlogo.zone/logos/r-project/r-project-official.svg" alt="R" width="30" height="30"/> </td>
@@ -100,6 +100,7 @@ Languages:
     <td><img src="https://github.com/devicons/devicon/raw/master/icons/cplusplus/cplusplus-original.svg" alt="c++" width="30" height="30"/> </td>
     <td><img src="https://github.com/devicons/devicon/raw/master/icons/java/java-original-wordmark.svg" alt="java" width="30" height="30"/></td>
 </table>
+
 <br>
 DevOps:
 <table>
@@ -107,13 +108,15 @@ DevOps:
      <td><img src="https://github.com/devicons/devicon/raw/master/icons/git/git-original-wordmark.svg" alt="git" width="30" height="30"/></td>
      <td><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="30" height="30"/></td>
 </table>
+
 <br>
-Data Science: 
+Data Science:
 <table>
     <td><img src="https://github.com/devicons/devicon/raw/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" width="30" height="30"/></td>
     <td><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original-wordmark.svg" alt="Python" width="30" height="30"/> </td>
     <td><img src="https://www.vectorlogo.zone/logos/r-project/r-project-official.svg" alt="R" width="30" height="30"/> </td>
 </table>
+
 <br>
 Databases and Cloud:
 <table>
@@ -122,16 +125,20 @@ Databases and Cloud:
      <td><img src="https://github.com/devicons/devicon/raw/master/icons/heroku/heroku-original-wordmark.svg" alt="heroku" width="30" height="30"/> </td>
 </table>
 
+<br>
 <i class="fa fa-language" aria-hidden="true"></i> **Languages**
 
 - Spanish: Native
-- English: Advanced
+
+- English: Advanced | C1 | TOEFL iBT 109 
+
 - Korean: Basic
+
+- German: Basic
+
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
-
-Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
 The source code is available at [sayalaruano/cv](https://github.com/sayalaruano/cv).
 
@@ -140,11 +147,11 @@ Last updated on `r Sys.Date()`.
 ```{r 'fix_dots_pdf_2'}
 # When in export mode the little dots are unaligned, so fix that. 
 if(PDF_EXPORT){
-  #glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
-  glue("View this CV online at {CV_HTML_LOC}")
-} else {
   glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
   #glue("View this CV online at {CV_HTML_LOC}")
+} else {
+  #glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
+  glue("View this CV online at {CV_HTML_LOC}")
 }
 ```
 
@@ -180,19 +187,18 @@ print_section(position_data, 'teaching')
 ```
 
 
-Publications {#publications data-icon=book}
+Publications {#pub data-icon=book}
 --------------------------------------------------------------------------------
 
-```{r 'pubs'}
-print_section(position_data, 'pubs')
+```{r 'pub'}
+print_text_block(text_blocks, 'pub')
 ```
-
 
 Conference presentations {#courses data-icon=chalkboard}
 --------------------------------------------------------------------------------
 
 ```{r 'conf'}
-print_section(position_data, 'conf')
+print_text_block(text_blocks, 'conf')
 ```
 
 
@@ -214,7 +220,6 @@ print_section(position_data, 'service')
 
 {#others}
 --------------------------------------------------------------------------------
-
 
 ```{r 'others'}
 print_text_block(text_blocks, 'others')
