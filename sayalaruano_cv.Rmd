@@ -2,6 +2,11 @@
 title: "Sebastián Ayala-Ruano CV"
 author: Sebastián Ayala-Ruano
 date: "`r Sys.Date()`"
+params:
+  pdf_mode:
+    value: true
+  cache_data:
+    value: true
 output:
   pagedown::html_resume:
     css: ['css/styles.css', 'resume']
@@ -9,7 +14,29 @@ output:
     self_contained: true
 ---
 
+```{r 'setup', include=FALSE}
+knitr::opts_chunk$set(
+  results='asis', 
+  echo = FALSE
+)
+
+# Import libraries
+library(glue)
+library(tidyverse)
+library(magrittr) # For the pipe
+# Source the function to print contents from the googlesheet into the html or pdf
+source("CV_printing_functions.R")
+
+# Variables with urls of the pdf and html
+CV_PDF_LOC <- "http://sayalaruano.github.io/cv/sayalaruano_cv.pdf"
+CV_HTML_LOC <- "[sayalaruano.github.io/cv](http://sayalaruano.github.io/cv)"
+
+# Create CV variable, obtained from the caache of the render function
+CV <- readr::read_rds('cached_positions.rds')
+```
+
 ```{css, echo=FALSE}
+/* This chunk removes the side bar of all of the pages except the first one*/
 .pagedjs_page:not(:first-of-type) {
   --sidebar-width: 0rem;
   --sidebar-background-color: #ffffff;
@@ -17,51 +44,6 @@ output:
   --decorator-horizontal-margin: 0.2in;
 }
 ```
-
-```{r 'setup', include=FALSE}
-knitr::opts_chunk$set(
-  results='asis', 
-  echo = FALSE
-)
-
-library(glue)
-library(tidyverse)
-
-# ======================================================================
-# These variables determine how the the data is loaded and how the exports are
-# done.
-
-# Is data stored in google sheets? If no data will be gather from the csvs/
-# folder in project
-using_googlesheets <- TRUE
-
-# Just the copied URL from the sheet
-positions_sheet_loc <- "https://docs.google.com/spreadsheets/d/1Uhd5RMbR37AdY7nFWSqYskN5EIG04QqSA3XG49nHPQM/edit?usp=sharing"
-
-# Is this sheet available for anyone to read? If you're using a private sheet
-# set this to false and go to gather_data.R and run the data loading manually
-# once to cache authentication
-sheet_is_publicly_readable <- TRUE
-
-# Is the goal of this knit to build a document that is exported to PDF? If so
-# set this to true to have links turned into footnotes at the end of the
-# document
-PDF_EXPORT <- FALSE
-
-CV_PDF_LOC <- "http://sayalaruano.github.io/cv/sayalaruano_cv.pdf"
-CV_HTML_LOC <- "[sayalaruano.github.io/cv](http://sayalaruano.github.io/cv)"
-
-# ======================================================================
-# Now we source two external scripts. One contains functions for building the
-# text output and the other loads up our data from either googlesheets or csvs
-
-# Functions for building sections from CSV data
-source('parsing_functions.R') 
-
-# Load data for CV/Resume
-source('gather_data.R')
-```
-
 
 Aside
 ================================================================================
@@ -71,21 +53,18 @@ Aside
 Contact {#contact}
 --------------------------------------------------------------------------------
 
-```{r 'contact_info'}
-contact_info %>% 
-  glue_data("- <i class='{iconpack} fa-{icon}'></i> {contact}")
+```{r}
+CV %>% print_contact_info()
 ```
 
 <p align="center">
-  <a href="https://www.twitter.com/sayalaruano/" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/095a95/twitter--v1.png" alt="Twitter" height="25" width="25"/></a>
-  <a href="https://github.com/sayalaruano" target="blank"><img align="center"  src="https://img.icons8.com/ios-glyphs/30/095a95/github.png" alt="GitHub" height="25" width="25" /></a>
-  <a href="https://www.linkedin.com/in/sayalaruano" target="blank"><img align="center" src="https://img.icons8.com/material-outlined/24/095a95/linkedin--v2.png" alt="LinkedIn" height="25" width="25" /></a>
-  <a href="https://orcid.org/0000-0001-9756-6745" target="blank">
-    <img align="center" src="https://img.icons8.com/windows/64/095a95/orcid.png" alt="orCID" height="25" width="25" /></a>
-  <a href="https://www.researchgate.net/profile/Sebastian-Ayala-Ruano" target="blank">
-    <img align="center" src="https://img.icons8.com/windows/64/095a95/researchgate.png" alt="Researchgate" height="25" width="25" /></a> 
-  <a href="https://scholar.google.com/citations?user=QbDzPWMAAAAJ&hl=en&oi=ao" target="blank">
-    <img align="center" src="https://img.icons8.com/ios-filled/50/095a95/google-scholar--v2.png" alt="Google schoolar" height="25" width="25" /></a> 
+    <a href="https://www.twitter.com/sayalaruano/" target="blank"><img align="center"  src="./css/icons/twitter.svg" alt="Twitter" height="20" width="20"/></a>
+    <a href="https://github.com/sayalaruano" target="blank"><img align="center"  src="./css/icons/github.svg" alt="GitHub" height="20" width="20" /></a>
+    <a href="https://www.linkedin.com/in/sayalaruano" target="blank"><img align="center" src="./css/icons/linkedin.svg" alt="LinkedIn" height="20" width="20" /></a>
+    <a href="https://orcid.org/0000-0001-9756-6745" target="blank">
+    <img align="center" src="./css/icons/orcid.svg" alt="orCID" height="20" width="20" /></a>
+    <a href="https://www.researchgate.net/profile/Sebastian-Ayala-Ruano" target="blank">
+    <img align="center" src="./css/icons/researchgate.svg" alt="Researchgate" height="20" width="20"/></a> 
 </p>
 
 Skills {#skills}
@@ -94,38 +73,39 @@ Skills {#skills}
 
 Programming Languages:
 <table>
-    <td><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original-wordmark.svg" alt="Python" width="30" height="30"/> </td>
-    <td><img src="https://www.vectorlogo.zone/logos/r-project/r-project-official.svg" alt="R" width="30" height="30"/> </td>
-    <td><img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-official.svg" alt="bash" width="45" height="30"/> </td>
-    <td><img src="https://github.com/devicons/devicon/raw/master/icons/cplusplus/cplusplus-original.svg" alt="c++" width="30" height="30"/> </td>
-    <td><img src="https://github.com/devicons/devicon/raw/master/icons/java/java-original-wordmark.svg" alt="java" width="30" height="30"/></td>
+    <td><img src="./css/icons/python-plain-wordmark.svg" alt="Python" width="30" height="30"/> </td>
+    <td><img src="./css/icons/r-plain.svg" alt="R" width="30" height="30"/> </td>
+    <td><img src="./css/icons/bash.svg" alt="bash" width="45" height="30"/> </td>
+    <td><img src="./css/icons/cplusplus-plain.svg" alt="c++" width="30" height="30"/> </td>
+    <td><img src="./css/icons/java-plain-wordmark.svg" alt="java" width="30" height="30"/></td>
 </table>
 
 <br>
 DevOps:
 <table>
-     <td><img src="https://github.com/devicons/devicon/raw/master/icons/github/github-original-wordmark.svg" alt="github" width="30" height="30"/></td>
-     <td><img src="https://github.com/devicons/devicon/raw/master/icons/git/git-original-wordmark.svg" alt="git" width="30" height="30"/></td>
-     <td><img src="https://github.com/devicons/devicon/raw/master/icons/docker/docker-original-wordmark.svg" alt="Docker" width="30" height="30"/></td>
+     <td><img src="./css/icons/github-original-wordmark.svg" alt="github" width="30" height="30"/></td>
+     <td><img src="./css/icons/git-original-wordmark.svg" alt="git" width="30" height="30"/></td>
+     <td><img src="./css/icons/docker-plain-wordmark.svg" alt="Docker" width="30" height="30"/></td>
 </table>
 
 <br>
 Data Science:
 <table>
-    <td><img src="https://github.com/devicons/devicon/raw/master/icons/jupyter/jupyter-original-wordmark.svg" alt="jupyter" width="30" height="30"/></td>
-    <td><img src="https://github.com/devicons/devicon/raw/master/icons/python/python-original-wordmark.svg" alt="Python" width="30" height="30"/> </td>
-    <td><img src="https://www.vectorlogo.zone/logos/r-project/r-project-official.svg" alt="R" width="30" height="30"/> </td>
+    <td><img src="./css/icons/jupyter-plain-wordmark.svg" alt="jupyter" width="30" height="30"/></td>
+    <td><img src="./css/icons/python-plain-wordmark.svg" alt="Python" width="30" height="30"/> </td>
+    <td><img src="./css/icons/r-plain.svg" alt="R" width="30" height="30"/> </td>
 </table>
 
 <br>
 Databases and Cloud:
 <table>
-     <td><img src="https://github.com/devicons/devicon/raw/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="30" height="30"/></td>
-     <td><img src="https://www.vectorlogo.zone/logos/firebase/firebase-ar21.svg" alt="firebase" width="45" height="30"/> </td>
-     <td><img src="https://github.com/devicons/devicon/raw/master/icons/heroku/heroku-original-wordmark.svg" alt="heroku" width="30" height="30"/> </td>
+     <td><img src="./css/icons/mysql-plain-wordmark.svg" alt="mysql" width="30" height="30"/></td>
+     <td><img src="./css/icons/postgresql-plain-wordmark.svg" alt="postgresql" width="30" height="30"/></td>
+     <td><img src="./css/icons/firebase-plain-wordmark.svg" alt="firebase" width="45" height="30"/> </td>
+     <td><img src="./css/icons/heroku-plain-wordmark.svg" alt="heroku" width="30" height="30"/> </td>
 </table>
-
 <br>
+
 <i class="fa fa-language" aria-hidden="true"></i> **Languages**
 
 - Spanish: Native
@@ -136,7 +116,6 @@ Databases and Cloud:
 
 - German: Basic
 
-
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
@@ -144,14 +123,12 @@ The source code is available at [sayalaruano/cv](https://github.com/sayalaruano/
 
 Last updated on `r Sys.Date()`.
 
-```{r 'fix_dots_pdf_2'}
+```{r}
 # When in export mode the little dots are unaligned, so fix that. 
-if(PDF_EXPORT){
-  #glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
+if(params$pdf_mode){
   glue("View this CV online at {CV_HTML_LOC}")
 } else {
   glue("[<i class='fas fa-download'></i> Download a PDF of this CV]({CV_PDF_LOC})")
-  #glue("View this CV online at {CV_HTML_LOC}")
 }
 ```
 
@@ -162,51 +139,49 @@ Sebastián Ayala-Ruano {#title}
 --------------------------------------------------------------------------------
 
 ```{r 'intro'}
-print_text_block(text_blocks, 'intro')
+CV %<>% print_text_block("intro")
 ```
 
 Education {#education data-icon=graduation-cap} 
 --------------------------------------------------------------------------------
 
 ```{r 'education'}
-print_section(position_data, 'education')
+CV %<>% print_section('education')
 ```
 
-Research Experience {#research data-icon=laptop} 
+Work Experience {#work data-icon=suitcase} 
 --------------------------------------------------------------------------------
 
-```{r 'work_research'}
-print_section(position_data, 'research_positions')
+```{r 'work'}
+CV %<>% print_section('work_positions')
 ```
 
 Teaching Experience {#teaching data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ```{r 'teaching'}
-print_section(position_data, 'teaching')
+CV %<>% print_section('teaching_positions')
 ```
-
 
 Publications {#pub data-icon=book}
 --------------------------------------------------------------------------------
 
 ```{r 'pub'}
-print_text_block(text_blocks, 'pub')
+CV %<>% print_text_block("pub")
 ```
 
-Conference presentations {#courses data-icon=chalkboard}
+Selected presentations {#conf data-icon=chalkboard}
 --------------------------------------------------------------------------------
 
 ```{r 'conf'}
-print_text_block(text_blocks, 'conf')
+CV %<>% print_text_block("conf")
 ```
-
 
 Honors and Awards {#honors data-icon=medal}
 --------------------------------------------------------------------------------
 
 ```{r 'honors'}
-print_section(position_data, 'honors')
+CV %<>% print_section("honors")
 ```
 
 
@@ -214,14 +189,13 @@ Leadership and Service {#leadership data-icon=users}
 --------------------------------------------------------------------------------
 
 ```{r 'service'}
-print_section(position_data, 'service')
+CV %<>% print_section("service")
 ```
-
 
 {#others}
 --------------------------------------------------------------------------------
 
 ```{r 'others'}
-print_text_block(text_blocks, 'others')
+CV %<>% print_text_block("others")
 ```
 

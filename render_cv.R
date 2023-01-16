@@ -9,9 +9,10 @@
 # If you need to update your data delete the "ddcv_cache.rds" file and re-run
 
 library(tidyverse)
+library(pagedown)
 source("CV_printing_functions.R")
 cv_data <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1Q1isK1VML7aTbNm-wtekRvUK6bS6l9Tewc-4yvtLgz0",
+  data_location = "https://docs.google.com/spreadsheets/d/16P_CAcWlMUKXJK-q7-Z7aMA8MQVHG9viP2nd5JxPu2c/edit?usp=sharing",
   cache_data = FALSE
 )
 
@@ -19,9 +20,9 @@ readr::write_rds(cv_data, 'cached_positions.rds')
 cache_data <- TRUE
 
 # Knit the HTML version
-#rmarkdown::render("sayalaruano_cv.Rmd",
- #                 params = list(pdf_mode = FALSE, cache_data = cache_data),
-  #                output_file = "index.html")
+rmarkdown::render("sayalaruano_cv.Rmd",
+                  params = list(pdf_mode = FALSE, cache_data = cache_data),
+                  output_file = "index.html")
 
 
 # Knit the PDF version to temporary html location

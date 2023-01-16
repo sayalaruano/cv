@@ -45,7 +45,7 @@ a {
 /* Customize some of the sizing variables */
 :root {
   --sidebar-width: 10rem; /* Shrink sidebar width  */
-  --sidebar-background-color: #F3F7FB; /* Make sidebar grey */
+  --sidebar-background-color: #F3F7FB; /* Make sidebar lightblue */
   --sidebar-horizontal-padding: 0.01in; /* Reduce sidebar padding */
   --decorator-outer-dim: 10px; /* Make position deliniating circles larger */
   --decorator-border: 2px solid #B9D0E9; /* Change color and thickness of timeline*/
@@ -116,7 +116,7 @@ a {
   margin-top: 0.1in;
 }
 
-/* Make little circle outline be a light blue */
+/* Make little circle outline be a grey */
 .decorator::after {
   background-color: #696969;
 }
