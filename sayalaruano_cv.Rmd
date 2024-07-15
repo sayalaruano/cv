@@ -31,7 +31,7 @@ source("CV_printing_functions.R")
 CV_PDF_LOC <- "http://sayalaruano.github.io/cv/sayalaruano_cv.pdf"
 CV_HTML_LOC <- "[sayalaruano.github.io/cv](http://sayalaruano.github.io/cv)"
 
-# Create CV variable, obtained from the caache of the render function
+# Create CV variable, obtained from the cache of the render function
 CV <- readr::read_rds('cached_positions.rds')
 ```
 
@@ -100,7 +100,7 @@ Databases and Cloud:
      <td><img src="./css/icons/mysql-plain-wordmark.svg" alt="mysql" width="30" height="30"/></td>
      <td><img src="./css/icons/postgresql-plain-wordmark.svg" alt="postgresql" width="30" height="30"/></td>
      <td><img src="./css/icons/firebase-plain-wordmark.svg" alt="firebase" width="45" height="30"/> </td>
-     <td><img src="./css/icons/heroku-plain-wordmark.svg" alt="heroku" width="30" height="30"/> </td>
+     <td><img src="./css/icons/neo4j.svg" alt="neo4j" width="30" height="30"/> </td>
 </table>
 <br>
 
@@ -109,10 +109,6 @@ Databases and Cloud:
 - Spanish: Native
 
 - English: Advanced | C1 | TOEFL iBT 109 
-
-- Korean: Basic
-
-- German: Basic
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
