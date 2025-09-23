@@ -12,7 +12,7 @@ library(tidyverse)
 library(pagedown)
 source("CV_printing_functions.R")
 cv_data <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/16P_CAcWlMUKXJK-q7-Z7aMA8MQVHG9viP2nd5JxPu2c/edit?usp=sharing",
+  data_location = "https://docs.google.com/spreadsheets/d/10eF0iAVFHb-ZifWoncHfyI8iCrX4ZDuy4SYejfsmZnw/edit?usp=sharing",
   cache_data = FALSE
 )
 
