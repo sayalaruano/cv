@@ -23,6 +23,10 @@ a {
 
 }
 
+strong, b {
+  font-weight: 700 !important;
+}
+
 /* When in PDF export mode make sure superscripts are nice and small and italic */
 /*sup {
   font-size: 0.45rem;

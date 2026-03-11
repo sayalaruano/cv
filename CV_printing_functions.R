@@ -213,8 +213,6 @@ print_text_block <- function(cv, label){
   invisible(strip_res$cv)
 }
 
-
-
 #' @description Construct a bar chart of skills
 #' @param out_of The relative maximum for skills. Used to set what a fully filled in skill bar is.
 print_skill_bars <- function(cv, out_of = 5, bar_color = "#969696", bar_background = "#d9d9d9", glue_template = "default"){
