@@ -51,6 +51,11 @@ CV <- readr::read_rds('cached_positions.rds')
 Aside
 ================================================================================
 
+<div class="logo-container">
+  <img src="./asar_logo.svg" alt="asar_logo" class="sidebar-logo">
+</div>
+
+
 Contact {#contact}
 --------------------------------------------------------------------------------
 
